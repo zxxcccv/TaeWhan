@@ -1,54 +1,38 @@
 package day_1;
 
+import java.util.ArrayList;
+
 import lombok.Data;
 
 @Data
 public class PhoneBook {
-	private String name;
-	private String company;
-	private int number;
-	
-	public PhoneBook(String name, String company, int number) {
-		super();
+	private String name, company;
+	ArrayList<PhoneNumber> pnList;
+
+	public PhoneBook(String name, String company, ArrayList<PhoneNumber> pnList) {
 		this.name = name;
 		this.company = company;
-		this.number = number;
+		this.pnList = pnList;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		PhoneBook other = (PhoneBook) obj;
-		if (company == null) {
-			if (other.company != null)
-				return false;
-		} else if (!company.equals(other.company))
-			return false;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		if (number != other.number)
-			return false;
-		return true;
+	public void print() {
+		System.out.println("=====================");
+		System.out.println("이름 : " + name);
+		System.out.println("직장 : " + company);
+		for(PhoneNumber tmp : pnList)
+			System.out.println(tmp);
+		System.out.println("=====================");
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((company == null) ? 0 : company.hashCode());
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + number;
-		return result;
+	public void update(String name, String company) {
+		this.name = name;
+		this.company = company;
 	}
 
+	public void printPhoneNumbers() {
+		for(int i = 0; i<pnList.size(); i++) {
+			System.out.println(i+1+". " + pnList.get(i).toString());
+		}
+	}
 	
-
 }
