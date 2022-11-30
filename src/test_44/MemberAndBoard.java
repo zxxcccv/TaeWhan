@@ -5,15 +5,46 @@ import lombok.Data;
 
 @Data
 public class MemberAndBoard {
-	private BoardMember member;
-	private ArrayList<Board> list = new ArrayList<Board>();
+	private String id;
+	private String pw;
+	private Board list;
 	
-	public MemberAndBoard(BoardMember member, ArrayList<Board> list) {
-		this.member = member;
+	public MemberAndBoard(String id, String pw, Board list) {
+		this.id = id;
+		this.pw = pw;
 		this.list = list;
 	}
+
+	public MemberAndBoard(String id, String pw) {
+		this.id = id;
+		this.pw = pw;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		MemberAndBoard other = (MemberAndBoard) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
+	}
 	
-	
-	
+
 	
 }

@@ -34,7 +34,7 @@ public class BoardMain {
 				
 				int index = memberList.indexOf(member);
 				if(index == -1) {
-					continue;
+					printStr("아이디 혹은 비밀번호가 잘못되었습니다.");
 				}
 				BoardMember a = memberList.get(index);
 				
@@ -48,9 +48,11 @@ public class BoardMain {
 					String contents = scan.nextLine();
 					Board list = new Board(type, title, contents);
 					boardList.add(list);
+					MemberAndBoard list1 = new MemberAndBoard(id, pw, list);
+					MABList.add(list1);
 					++count;
 					printStr("게시글이 등록되었습니다. 등록된 게시글의 번호는 " + count + "번 입니다.");
-					MemberAndBoard b = new MemberAndBoard(member, boardList);
+					
 				}else {
 					printStr("아이디 혹은 비밀번호가 잘못되었습니다.");
 				}
@@ -64,29 +66,37 @@ public class BoardMain {
 				break;
 				
 			case 3:
+				
+				printStr("수정할 게시글의 번호를 입력해주세요.");
+				number = scan.nextInt();
+				scan.nextLine();
+				Board c = new Board(number);
+				index = boardList.indexOf(c);
+				if(index == -1) {
+					System.out.println(number +"번의 게시물은 존재하지 않습니다.");
+					break;
+				}
+				MemberAndBoard b = MABList.get(index);
 				printStr("ID를 입력해주세요.");
 				id = scan.nextLine();
 				printStr("password를 입력해주세요.");
 				pw = scan.nextLine();
+				MemberAndBoard d = new MemberAndBoard(id, pw);
+				if(b.getId().equals(d.getId())) {
+					Board tmp = boardList.get(index);
+					
+					System.out.print("수정할 게시글 유형 : ");
+					String type = scan.nextLine();
+					System.out.print("수정할 게시글 제목 : ");
+					String title = scan.nextLine();
+					System.out.print("수정할 게시글 내용 : ");
+					String contents = scan.nextLine();
+					
 				
-				BoardMember member1 = new BoardMember(id, pw);
-				index = memberList.indexOf(member1);
-				if(index == -1) {
-					continue;
+					tmp.update(type, title, contents);
+				}else {
+					printStr("게시글 등록자가 아닙니다.");
 				}
-				BoardMember b = memberList.get(index);
-				
-				if(b.getPw().equals(member1.getPw())) {
-					//비밀번호가 맞다면 MemberAndBoard에서 b로 쓴 BoardList를 가져온다
-					//id와 pw를 비교하듯이 b에 상응되는 BoardList가 아니라면 수정권한 X
-					//
-				}
-				
-				
-				
-				printStr("수정할 게시글의 번호를 입력해주세요.");
-				number = scan.nextInt();
-				scan.nextInt();
 				
 				break;
 			case 4:
