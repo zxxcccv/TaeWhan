@@ -7,9 +7,12 @@ import lombok.Data;
 
 @Data
 public class Member implements Serializable {
+	
+	private static final long serialVersionUID = -8129425427566287306L;
 	private String id, pw;
 	private Date joinDate;
 	private Authority authority;
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -48,7 +51,6 @@ public class Member implements Serializable {
 	public Member(String id, String pw) {
 		this(id, pw, Authority.MEMBER);
 	}
-	
 }
 enum Authority{
 	ADMIN, MEMBER
