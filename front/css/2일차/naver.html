@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>naver</title>
+	<style>
+		* { margin: 0; padding: 0;}
+		ul,ol{list-style: none;}
+		a{text-decoration: none;}
+		#body{ min-width: 1190px;}
+		.inner-container{ 
+			margin: 0 auto;
+			width: 1130px; background: teal; padding: 0 30px;
+	}
+		.box-search{
+			position: relative;
+		}
+		.box-search .box-service{
+			position: absolute; right: -3px; top: 12px;
+		}
+		.box-search .link-start-page{
+			font-size: 11px; color: #404040; float: left; 
+		}
+		.box-search .link-start-page:hover{
+			text-decoration: underline;
+		}
+		.box-search .link-start-page::after{
+			content: ''; width: 26px; height: 26px; display: inline-block;
+			background-position: -382px -213px;
+			vertical-align: top; margin: -3px 0 0 3px;
+		}
+		.img1::after{
+			background: url(img/img1.png);
+			background-size: 442px 428px;
+		}
+		.logo_special .special_logo_link{
+			position: absolute; top: 0; bottom: 0; left: 95px; width: 243px;
+		}
+		.special_logo_link{
+			color: inherit; text-decoration: none;
+		}
+		h1{
+			font-size: inherit; line-height: inherit; font-weight: bold;
+		}
+		fieldset{margin: 0; padding: 0; display: block; 
+		margin-inline-start: 2px; margin-inline-end: 2px;padding-block-start: 0.35em;
+			padding-inline-start: 0.75em; padding-inline-end: 0.75em; padding-block-end: 0.625em;
+			min-inline-size: min-content;
+	}
+	regend{
+		display: block; padding-inline-start: 2px;padding-inline-end: 2px;
+		border-width: inintial; border-style: none; border-color: initial;
+		border-image: initial;
+	}
+	.search_area .green_window{
+		position: absolute;
+		width: 582px;
+		height: 52px; border: 2px solid #19ce60;
+		border-radius: 2px;
+		display: block;
+	}
+	</style>
+
+</head>
+<body>
+	<div id="body">
+		<div class="container-search">
+			<div class="inner-container">
+				<div class="box-search">
+					<div class="box-service">
+						<a href="#" class="link-start-page img1">네이버를 시작페이지로</a>
+						<a href="#" >쥬니어네이버</a>
+						<a href="#" >해피빈</a>
+					</div>
+					<div class="logo_area">
+						<h1 class="logo_special">
+							<a href="https://search.naver.com/search.naver?where=nexearch&amp;sm=top_brd&amp;fbm=1&amp;ie=utf8&amp;query=%EC%86%8C%ED%95%9C" class="special_logo_link" title="소한, 따뜻한 하루 보내세요~!" data-clk="top.spe">
+								<img src ="https://s.pstatic.net/static/www/mobile/edit/20230105/mobile_161834696879.gif" width="415" height="160" class="special_img" alt="소한, 따뜻한 하루 보내세요~!">
+							</a>
+						</h1>
+					</div>
+					<div class="search_area">
+						<form id="sform" name="sform" action="https://search.naver.com/search.naver" method="get" role="search">
+							<fieldset>
+								<legend class="blind">검색</legend>
+								<div class="green_window" style="border-color: #6399de;">
+								<input id="query" name="query" type="text" title="검색어 입력" maxlength="255" class="input_text" tabindex="1" accesskey="s" style="ime-mode:active;" autocomplete="off" placeholder="검색어를 입력해 주세요." onclick="document.getElementById('fbm').value=1;" value="" data-atcmp-element="">
+								</div>
+								<button id="search_btn" type="submit" title="검색" tabindex="3" class="btn_submit" onclick="window.nclick(this,'sch.action','','',event);" style="background-color: #6399de">
+									<span class="blind">검색</span>
+									<span class="ico_search_submit"></span>
+								</button>
+							</fieldset>
+						</form>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<div class="container-menu"></div>
+		<div class="container-body"></div>
+		<div class="container-footer"></div>
+	</div>
+</body>
+</html>
