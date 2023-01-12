@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>강사님NAVER</title>
+	<title>my NAVER</title>
 	<style>
 		* { margin: 0; padding: 0;}
 		ul,ol{ list-style: none;}
@@ -162,8 +162,8 @@
 		.group-menu .item-fix-menu:nth-child(6){
 			padding: 5px 0;
 		}
-		.group-menu .item-fix-menu:nth-child(5),
-		.group-menu .item-fix-menu:nth-child(6){
+		.group-menu .item-fix-menu:nth-child(5) a,
+		.group-menu .item-fix-menu:nth-child(6) a{
 			line-height: 0;
 		}
 		.group-menu .list-favority-menu{
@@ -176,9 +176,109 @@
 			margin-left: 12px;
 		}
 		.group-menu .link-favority-menu{
-			color:#000;
+			color: #000;
+		}
+		.group-menu .btn-more{
+			margin-left: 17px; font-size: 13px; line-height: 30px;
+			color: #202020;
+		}
+		.group-menu .icon-more{
+			width: 11px; height: 7px; display: inline-block;
+			background-position: -402px -296px;	vertical-align: 2px;
+			margin-left: 7px;
+		}
+		.group-weather{
+			width: 270px; height: 52px; top: 0; right: 0; 
+			bottom: 0; overflow: hidden; text-align: right;
+			position: absolute;
+		}
+		.container-menu .box-menu{
+			position: relative;
+		}
+		.container-menu{
+			box-shadow: 0 1px 3px 0 rgba(0,0,0,0.12);
 		}
 
+		/* 메인 */
+		.container-body .inner-container{
+			padding: 20px 30px;
+		}
+		.box-body .box-body-left{
+			float: left; width: 750px;
+		}
+		.box-body .box-body-right{
+			float: right; width: 350px;
+		}
+		.box-body .box-body-left1{
+			height: 135px; position: relative;
+		}
+		.box-body .box-body-left1 .frame{
+			height: 135px; width: 750px;
+		}
+		.box-body .line{
+			background-color: #000; position: absolute; opacity: 0.07;
+		}
+		.box-body .line-top{
+			height: 1px; left: 0; right: 0; top: 0; 
+		}
+		.box-body .line-bottom{
+			height: 1px; left: 0; right: 0; bottom: 0; 
+		}
+		.box-body .line-left{
+			width: 1px; left: 0; bottom: 0; top: 0; 		
+		}
+		.box-body .line-right{
+			width: 1px; right: 0; bottom: 0; top: 0; 	
+		}
+		
+		/* 메인 오른쪽 첫번째 박스 */
+		.box-body-right1{
+			padding: 16px 16px 12px 17px; border: 1px solid #dae1e6;
+			background-color: #f7f9fa;
+		}
+		.box-body-right1 .box-title{
+			font-size: 12px; line-height: 16px; letter-spacing: -.2px; color: gray;
+			padding-left: 3px;
+		}
+		.box-body-right1 .link-login{
+			display: block; padding: 15px 0; font-size: 13px; text-align: center;
+			border-radius: 2px; background-color: #19ce60; border: 1px solid #15c654;
+			margin-top: 11px; font-weight: bold; color: #fff;
+		}
+		.box-body-right1 .icon-login{
+			width: 60px; height: 12px; display: inline-block;
+			background-position: -202px -296px;	vertical-align: top;
+			margin: 2px 5px 0 0;
+		}
+		.box-body-right1 .box-service{
+			margin : 14px 8px 0 4px; letter-spacing: -.2px;
+		}
+		.box-body-right1 .link-find-id{
+			letter-spacing: -.2px; color: #404040;
+		}
+		.box-body-right1 .box-service::before{
+			width: 10px; height: 14px; display: inline-block; content: '';
+			background-position: -408px -55px;	vertical-align: top;
+			margin: -1px 1px 1px;
+		}
+		.box-body-right1 .link-find-pw{
+			letter-spacing: -.2px; color: #404040;
+		}
+		.box-body-right1 .link-find-pw::before{
+			width: 3px; height: 3px; display: inline-block; content: ''; border-radius: 50%;
+			vertical-align: 3px; margin: 0px 5px 0px 6px; background-color: #d7dce0;
+		}
+		.box-body-right1 .box-service>*:hover{
+			text-decoration: underline;
+		}
+		.box-body-right1 .link-signup{
+			float: right; color: #505050; letter-spacing: -.2px;
+		}
+		.box-body-right1 .link-signup::before{
+			width: 11px; height: 11px; display: inline-block; content: '';
+			background-position: -401px -245px;	vertical-align: top;
+			margin: 2px 5px 0 0;
+		}
 
 		/* 공통 */
 		.clearfix::after{
@@ -193,48 +293,211 @@
 		.icon-search.img1,.icon-auto-complete.img1,
 		.icon-kbd.img1, .icon-naver-logo.img1, .icon-mail.img1,
 		.icon-shpping.img1,.icon-shpping-live.img1,.icon-tv.img1,
-		.icon-more.img1{
+		.icon-more.img1, .icon-login.img1,
+		.box-body-right1 .link-find-id::before,
+		.box-body-right1 .link-signup::before,
+		.link-media::after,.ico-list, .ico-set, .ico-tile,
+		.box-service::before, .link-newsstand::before, .link-newsstand::after,
+		.left::before, .right::before{
 			background-image: url(../img/img1.png);
 			background-size: 442px 428px;
 		}
-		.group-menu .btn-more{
-			margin-left: 17px; font-size: 13px; line-height: 30px;
-			color: #202020; 
+		.box-body-left2{
+			width: 750px; margin-top: 12px;
 		}
-		.group-menu .icon-more{
-			width: 11px; height: 7px; display: inline-block;
-			background-position: -402px -296px;	vertical-align: 2px;
-			margin-left: 7px;
+		.left2-box1{
+			position: relative; padding: 12px 15px 11px 15px;
+			background-color: #f7f9fa; border: 1px solid #dae1e6;
+			line-height: 24px;
 		}
-		.group-weather{
-			width: 270px; height: 52px; top: 0; right: 0;
-			bottom: 0; overflow: hidden; text-align: right;
-			position: absolute;
+		.left2-box1::after{
+			content: ''; display: table; table-layout: fixed;
+			clear: both;
 		}
-		.container-menu .box-menu{
+		.box1-1{
+			float: left; line-height: 24px;
+		}
+		.box1-1::after{
+			content: ''; display: table; table-layout: fixed; clear: both;	
+		}
+		.link-media{
+			overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+			float: left; position: relative; max-width: 89px; padding-right: 12px;
+			margin-right: 7px; font-size: 13px; color: #000; font-weight: 700;
+			text-decoration: none; letter-spacing: -.3px;
+		}
+		.link-media::after{
+			position: absolute; top: 7px; right: 0; display: inline-block;
+			width: 6px; height: 10px; background-position: -262px -112px;
+			background-repeat: no-repeat; vertical-align: top; content: '';
+		}
+		.issue{
+			overflow: hidden;
+			float: left;
+			width: 310px;
+			height: 24px;
+		}
+		.issue::after{
+			content: ''; display: table; table-layout: fixed; clear: both;
+		}
+		.box1-2{
+			float: right; font-weight: 700;
+		}
+		.box1-2::after{
+			content: ''; display: table; table-layout: fixed; clear: both;
+		}
+		.link-news{
+			color: #3565c9;
+			float: left; height: 24px; font-size: 13px; text-decoration: none;
+			cursor: pointer; letter-spacing: -.2px;
+		}
+		.link-news::after{
+			background-color: #c8ccd1; display: inline-block;
+			width: 3px; height: 3px; border-radius: 50%; content: '';
+			margin-left: 8px; vertical-align: 3px;
+		}
+		.link-direct{
+			margin: 0 4px 0 7px;
+			color: #202020;
+			float: left; height: 24px; font-size: 13px; text-decoration: none;
+			cursor: pointer; letter-spacing: -.2px;
+		}
+		.group-title{
+			padding: 22px 0 16px;
+			font-size: 14px;
+			line-height: 18px;
+			letter-spacing: -.2px;
+		}
+		.group-title::after{
+			content: ''; display: table; table-layout: fixed; clear: both;	
+		}
+		.link-newsstand{
+			float: left; color: #000; font-weight: 700; text-decoration: none;
+			white-space: nowrap; cursor: pointer; 
+		}
+		.link-newsstand::before{
+			display: inline-block; width: 27px; height: 24px; background-position: -272px -342px;
+			background-repeat: no-repeat; vertical-align: top; content: '';
+			margin: -6px 1px 0 0;
+		}
+		.link-newsstand::after{
+			display: inline-block; width: 7px; height: 11px; background-position: -410px -213px;
+			background-repeat: no-repeat; content: ''; margin-left: 6px;
+			vertical-align: -1px;
+		}
+		.sort-area{
+			float:left; margin-left: 10px;
+		}
+		.btn-sort1{
+			font-size: 14px; color: #505050; text-decoration: none;
+			cursor: pointer;
+		}
+		.btn-sort2{
+			color: #000; font-weight: 700; font-size: 14; text-decoration: none;
+			cursor: pointer;
+		}
+		.btn-sort2::before{
+			background-color: #c7ccd1; display: inline-block;
+			width: 4px; height: 4px; content: ''; border-radius: 50%;
+			margin: 0 8px 0 4px; vertical-align: 3px;
+		}
+		.set-area{
+			float: right; 
+		}
+		.set-area::after{
+			content: ''; display: table; table-layout: fixed; clear: both;
+		}
+		.btn-set{
+			float: left; padding: 0 9px; color: inherit; text-decoration: none;
+			cursor: pointer;
+		}
+		.ico-list{
+			display: inline-block; width: 14px; height: 13px; background-position: -244px -310px;
+			background-repeat: no-repeat; vertical-align: top; opacity: .7;
+			cursor: pointer; font-style: normal;
+		}
+		.ico-tile{
+			display: inline-block; width: 13px; height: 13px; background-position: -276px -310px;
+			background-repeat: no-repeat; vertical-align: top; opacity: 1;
+			cursor: pointer; font-style: normal;
+		}
+		.ico-set{
+			display: inline-block; width: 15px; height: 15px; background-position: -102px -386px;
+			background-repeat: no-repeat; vertical-align: top; opacity: .7; margin: -1px 0 1px;
+			cursor: pointer; font-style: normal;
+		}
+		.box-in-right2{
+			position: relative; height: 47px; margin: 12px 0; border: 1px solid #dae1e6;
+			letter-spacing: -.25px;
+		}
+		.right-box1{
+			padding: 0; width: 281px; position: absolute; left: 0px;
+			height: 100%;
+		}
+		.right-box2{
+			position: absolute; top: 11px; right: 10px; overflow: hidden;
+		}
+		.left{
+			float: left; background-color: #fff; border: 1px solid #e4e8eb;
+			cursor: pointer;
+		}
+		.left:hover{background-color: #fafbfc;}
+		.right:hover{background-color: #fafbfc;}
+		.left::before{
+			display: inline-block; width: 6px; height: 9px; background-position: -162px -327px;
+			background-repeat: no-repeat; vertical-align: top; content: ''; margin: 7px 8px 6px;
+		}
+		.right{
+			margin-left: -1px;
+			float: left; background-color: #fff; border: 1px solid #e4e8eb;
+		}
+		.right::before{
+			display: inline-block; width: 6px; height: 9px; background-position: -146px -327px;
+			background-repeat: no-repeat; vertical-align: top; content: ''; margin: 7px 8px 6px;
+		}
+		.card_news{
+			display: block; padding: 14px 0 13px 16px; cursor: pointer; letter-spacing: -.25px;
+		}
+		.news_badge{
+			float: left; height: 18px; padding: 0 7px; margin-right: 8px; border: 1px solid #202020;
+			border-radius: 10px; font-size: 11px; line-height: 18px; color: #202020; font-weight: 700;
+			vertical-align: top; font-style: normal; cursor: pointer; letter-spacing: -.25px;
+		}
+		.news{
+			overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: block;
+			font-size: 13px ; line-height: 20px; color: #404040; cursor: pointer;
+		}
+		
+		.addiv{
 			position: relative;
 		}
-		.container-menu{
-			box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+		.ad{
+			width: 350px; height: 200px; position: relative;
 		}
-		.left-box{
-			float:left; width: 750px; height: 40px; background: #000;
+		.frame1{
+			width: 350px; height: 200px;
 		}
-		.right-box{
-			float: right; width: 350px; height: 40px;	background:violet;
+		.bx1{
+			display: block; letter-spacing: -.2px;
 		}
-		/*메인*/
-		.container-body .inner-container{
-			padding:20px 30px ;
+		.bx2{
+			padding: 35px 0 27px; letter-spacing: -.25px;
 		}
-		.box-body .box-body-left{
-			height: 400px; float: left;
-			width: 750px; 
+		.group_title{
+			overflow: hidden; padding-bottom: 17px;
 		}
-		.box-body .box-body-right{
-			height: 400px; float: right;
-			width: 350px; background-color: black;
+		.group-title .title_area{
+			float: left; 
 		}
+		.title_area .title{
+			font-size: 14px; color: #000; font-weight: bold;
+		}
+		.title_area .dsc{
+			margin-left: 8px; color: gray;
+		}
+
+		
+
 	</style>
 </head>
 <body>
@@ -323,28 +586,28 @@
 						</ul>
 						<ul class="list-favority-menu clearfix">
 							<li class="item-favority-menu">
-								<a href="" class="link-favority-menu">사전</a>
+								<a href="#" class="link-favority-menu">사전</a>
 							</li>
 							<li class="item-favority-menu">
-								<a href="" class="link-favority-menu">뉴스</a>
+								<a href="#" class="link-favority-menu">뉴스</a>
 							</li>
 							<li class="item-favority-menu">
-								<a href="" class="link-favority-menu">증권</a>
+								<a href="#" class="link-favority-menu">증권</a>
 							</li>
 							<li class="item-favority-menu">
-								<a href="" class="link-favority-menu">부동산</a>
+								<a href="#" class="link-favority-menu">부동산</a>
 							</li>
 							<li class="item-favority-menu">
-								<a href="" class="link-favority-menu">지도</a>
+								<a href="#" class="link-favority-menu">지도</a>
 							</li>
 							<li class="item-favority-menu">
-								<a href="" class="link-favority-menu">VIBE</a>
+								<a href="#" class="link-favority-menu">VIBE</a>
 							</li>
 							<li class="item-favority-menu">
-								<a href="" class="link-favority-menu">도서</a>
+								<a href="#" class="link-favority-menu">도서</a>
 							</li>
 							<li class="item-favority-menu">
-								<a href="" class="link-favority-menu">웹툰</a>
+								<a href="#" class="link-favority-menu">웹툰</a>
 							</li>
 						</ul>
 						<a href="#" class="btn-more">더보기<i class="icon-more img1"></i></a>
@@ -357,21 +620,114 @@
 			<div class="inner-container">
 				<div class="box-body clearfix">
 					<div class="box-body-left">
-						<div class="left-first-box">
-							<div class="first-box" style="position: relative;">
-								<div class="second-box" style="height: 135px;">
-									<div style="width: 750px; height: 135px; margin: 0px auto; position: relative;">
-									 <iframe src="" frameborder="0"></iframe>
+						<div class="box-body-left1">
+							<iframe src="add1.html" frameborder="0" class="frame"></iframe>
+							<span class="line line-top"></span>
+							<span class="line line-bottom"></span>
+							<span class="line line-left"></span>
+							<span class="line line-right"></span>
+						</div>
+						<!-- 메인 왼쪽 첫번째 박스 -->
+					<div class="box-body-left2">
+						<div class="left2-box1">
+							<div class="box1-1">
+								<a href="#" class="link-media">연합뉴스</a>
+								<div class="issue"></div>
+							</div>
+							<div class="box1-2">
+								<a href="#" class="link-news">뉴스홈</a>
+								<a href="#" class="link-direct">연예</a>
+								<a href="#" class="link-direct">스포츠</a>
+								<a href="#" class="link-direct">경제</a>
+							</div>
+						</div>
+						<div class="group-title">
+							<a href="#" class="link-newsstand">뉴스스탠드</a>
+							<div class="sort-area">
+								<a href="#" class="btn-sort1">구독한 언론사</a>
+								<a href="#" class="btn-sort2">전체언론사</a>
+							</div>
+							<div class="set-area">
+								<a href="#" class="btn-set">
+									<i class="ico-list">
+										<span class="blind">리스트형</span>
+									</i>
+								</a>
+								<a href="#" class="btn-set">
+									<i class="ico-tile">
+										<span class="blind">썸네일형</span>
+									</i>
+								</a>
+								<a href="#" class="btn-set">
+									<i class="ico-set">
+										<span class="blind">설정</span>
+									</i>
+								</a>
+							</div>
+						</div>
+						<div class="bx1">
+							<div class="bx2">
+								<div class="bx2-1">
+									<div class="group_title">
+										<div class="title_area">
+											<strong class="title">오늘 읽을만한 글</strong>
+											<span class="dsc">주제별로 분류된 다양한 글 모음</span>
+										</div>
+										<div class="info_area"></div>
 									</div>
+								</div>
+								<div class="bx2-2"></div>
+							</div>
+						</div>
+						<div class="group">
+							
+						</div>
+					</div>
+					</div>
+					<!-- 메인 왼쪽 박스 -->
+					<div class="box-body-right">
+						<div class="box-body-right1">
+							<div class="box-in-right1">
+								<p class="box-title">네이버를 더 안전하고 편리하게 이용하세요</p>
+								<a href="#" class="link-login">
+									<i class="icon-login img1"></i>로그인
+								</a>
+								<div class="box-service clearfix">
+									<a href="#" class="link-find-id"> 아이디 </a>
+									<a href="#" class="link-find-pw">비밀번호찾기</a>
+									<a href="#" class="link-signup">회원가입</a>
 								</div>
 							</div>
 						</div>
+						<div class="box-in-right2">
+							<div class="right-box2">
+								<a href="#" class="left">
+									<span class="blind">이전</span>
+								</a>
+								<a href="#" class="right">
+									<span class="blind">다음</span>
+								</a>
+							</div>
+							<div class="right-box1">
+								<a href="#" class="card_news">
+									<i class="news_badge">이슈</i>
+									<span class="news">코로나바이러스감염증-19 현황</span>
+								</a>
+							</div>
+						</div>
+						<div class="addiv">
+							<div class="ad">
+								<iframe src="add2.html" frameborder="0" class="frame1"></iframe>
+							</div>
+						</div>
+						<!-- 메인 오른쪽 첫번째 박스 -->
 					</div>
-					<div class="box-body-right"></div>
+					<!-- 메인 오른족 박스 -->
 				</div>
 			</div>
 		</div>
 		<footer class="container-footer">
+			
 		</footer>
 	</div>
 </body>
