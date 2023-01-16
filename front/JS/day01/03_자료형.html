@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>자료형 예제</title>
+</head>
+<body>
+	<script>
+		let num = 10.12;
+		console.log(typeof num); //type number
+		let str ='10.12'
+		console.log(typeof str); //type String
+		let str2 = new String('10.12');
+		console.log(typeof str2);	//type object
+		let num2;
+		console.log(typeof num2); //type undefined 선언만하고 초기화안함
+		let obj = null;
+		console.log(typeof obj); //type object
+		console.log(num2 / 2); //계산할 수 없어서 NaN 뜸
+		let isEven = true;
+		console.log(typeof isEven); //type boolean
+		let isGreater = 4 > 1; //true
+		console.log(typeof isGreater); //type boolean
+	</script>
+</body>
+</html>

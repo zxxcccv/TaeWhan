@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		let num = 10;
+		let str = String(num);
+		console.log(`${str} : `+typeof str);
+		str = '' + num;
+		console.log(`${str} : ` + typeof str);
+		let num1 = Number(true); //1
+		let num2 = Number(false); //0
+		let num3 = Number(undefined); //NaN
+		let num4 = Number(null); //0
+		let num5 = Number('123.34'); //123.34
+		let num6 = Number('234,123'); //NaN
+		let num7 = Number(''); //0
+		let num8 = parseInt('123.34'); //123
+		let num9 = parseInt('234, 132'); //234 : 정수로 변환이 불가능한 ,(콤마)앞에 있는 정수만 추출
+		console.log(`${num1} : ` + typeof num1); 
+		console.log(`${num2} : ` + typeof num2); 
+		console.log(`${num3} : ` + typeof num3); 
+		console.log(`${num4} : ` + typeof num4); 
+		console.log(`${num5} : ` + typeof num5); 
+		console.log(`${num6} : ` + typeof num6);
+		console.log(`${num7} : ` + typeof num7);
+		console.log(`${num8} : ` + typeof num8);
+		console.log(`${num9} : ` + typeof num9);
+
+		console.log(Boolean(2));
+		console.log(Boolean(0));
+		console.log(Boolean('0'));
+		console.log(Boolean(''));
+		console.log(Boolean(' '));
+		console.log(Boolean('Hello'));
+		console.log(Boolean(0.0));
+		
+
+	</script>
+	
+</body>
+</html>
