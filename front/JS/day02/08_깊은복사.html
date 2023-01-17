@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		let user1 = {
+			id : 'abc',
+			pw : 'qwe'
+		}
+		let user2 = user1;
+		user2.id = 'qwe'
+		console.log(user1);
+		console.log(user2); //얕은 복사(주소값 참조), 아이디가 같이 바뀜
+		
+		let user3 = {};
+		for(key in user2){
+			user3[key] = user2[key];
+		}
+		user2.id = 'oew'
+		console.log(user1);
+		console.log(user2);
+		console.log(user3); //반복문을 이용한 깊은 복사로 값이 같이 바뀌지 않음
+
+		Object.assign(user2, use1)
+	</script>
+</body>
+</html>

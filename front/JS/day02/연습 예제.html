@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>연습 예제</title>
+</head>
+<body>
+	<Script>
+		/*
+		알림창을 통해 이름을 입력받고, 입력받은 이름을 알림창에 출력하는 코드를 작성
+		*/
+		/*res = prompt('당신의 이름은 무엇입니까 ?');
+		console.log('사용자의 이름은 ' + res + ' 입니다.');
+		
+		function nameOutPut(){
+		res = prompt('당신의 이름은 무엇입니까 ?');
+		 alert('사용자의 이름은 ' + res + ' 입니다.');
+		}
+		nameOutPut();
+		//알림창을 통해 두 수를 입력받고, 두 수의 합을 확인하는 코드를 작성
+		let a = prompt('합 할 숫자를 입력하세요.')
+		let b = prompt('합 할 숫자를 입력하세요.')
+		a = +a; b= +b //프롬프트로 입력받은 정수나 실수는 문자로 취급받아서 변환해줘야함
+		let c = a + b;
+		console.log(`${a} + ${b} = ${a + b}`);
+		alert('숫자의 합은' + c + '입니다.');
+		*/
+		//입력한 값이 숫자가 아닌 경우 0으로 대체해서 합을 구하도록 수정하세요.
+	 /*
+		let d = prompt('합 할 숫자를 입력하세요.')
+		let f = prompt('합 할 숫자를 입력하세요.')
+		d = +d; f= +f //프롬프트로 입력받은 정수나 실수는 문자로 취급받아서 변환해줘야함
+		alert(typeof d);
+		alert(typeof f);
+		let g = d + f;
+		console.log(`${d} + ${f} = ${d + f}`);
+		*/
+
+		function sum(num1, num2){
+			num1 = num1??0; // a??b a가 null, undefined가 아니면 a 그외에는 b
+			num2 = num2??0;
+			let tmp1 = +num1;
+			let tmp2 = +num2;
+			if(tmp2 != num1)
+				num1 = 0;
+			if(tmp2 != num2)
+				num2 = 0;
+				return +num1 + +num2;
+		}
+		function sum1(num1,num2){
+			num1 = num1??0;
+			num2 = num2??0;
+			num1 = isNaN(+num1) ? 0 : +num1;
+			num2 = isNaN(+num2) ? 0 : +num2;
+			alert(num1 + num2);
+ 		}
+		a = prompt('더할 숫자를 입력하세요.');
+		b = prompt('더할 숫자를 입력하세요.');
+		sum1(a,b)
+
+		
+	</Script>
+	
+</body>
+</html>

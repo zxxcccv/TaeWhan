@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>함수 예제</title>
+</head>
+<body>
+	<script>
+		/*
+		- 자바 메소드
+		리턴타입 메소드명 (자료형 변수명1, 자료형 변수명2, ...){
+
+		}
+		- 자바스크립트 함수 선언 방식
+		function 함수명(변수명1, 변수명2, ...){
+
+		}
+		 - 선언된 함수는 어디에서 호출하든 상관없이 호출됨 - 호이스팅
+		*/
+		function sayHello(){
+			console.log(`Hello`);
+		}
+		sayHello();
+		/*
+		주어진 두 변수를 더해 콘솔에 출력하는 함수를 만들어보세요
+		*/
+		function sum(a, b){
+			console.log(a + b);
+		}
+		
+		function sum1(a, b){
+			return a + b;
+		}
+		sum(8, 9);
+		sum1(8, 9);
+		sum(7, 9 ,10); // 매개변수를 2개로 설정했는데, 실행은 됨, 세번째 변수는 처리하지 않음 16
+		sum(8) //매개변수의 숫자가 맞지 않아도 실행됨, 두번째 매개변수 undefined, 결과는 NaN
+		console.log(sum1(8, 9));
+		let res = sum1(1,2)
+		console.log(res);
+		
+		var name = '홍길동'
+		function showName(){
+			console.log(name);
+		}
+		showName();
+		var name = '고길동'
+		showName();
+		
+		function showMyName(firstName='길동', lastName='홍'){
+			console.log(`${lastName} ${firstName}`)
+		}
+		showMyName('꺽정','임');
+		showMyName('꺽정','동');
+
+	</script>
+</body>
+</html>
