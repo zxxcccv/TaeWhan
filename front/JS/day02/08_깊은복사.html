@@ -26,7 +26,10 @@
 		console.log(user2);
 		console.log(user3); //반복문을 이용한 깊은 복사로 값이 같이 바뀌지 않음
 
-		Object.assign(user2, use1)
+		Object.assign(user2, use1, {name : '홍길동'}, {name : '임꺽정', age : 21});
+		user2.id = 'qwe';
+		console.log(user1);
+		console.log(user2);
 	</script>
 </body>
 </html>

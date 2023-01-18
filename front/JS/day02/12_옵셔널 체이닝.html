@@ -31,7 +31,7 @@
 		user.authority.name = 'user';
 		user.authority.value = 9;
 		user.authority.code = 7;
-		
+		user?.name.firstName = '홍'; //undefined를 리턴해줌, 옵셔널 체이닝으로 값을 할당할 순 없지만, 에러가 나는 걸 막아 줄 수는 있음
 
 		console.log(user.authority);
 	</script>

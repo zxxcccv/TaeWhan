@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// 자바스크립트에서 다양한 타입의 요소를 배열에 넣을 수 있음
+		/*
+		push(data) : 배열 끝에 data 추가
+		unshift(data)  : 배열 앞에 data 추가
+		pop() : 배열 마지막 요소를 제거 후 반환
+		shift() : 배열 첫번째 요소를 제거 후 반환
+		*/
+		let arr = [];
+		arr.push(1); // [1]
+		arr.unshift('2'); // ['2', 1]
+		arr.push(true); // ['2', 1, true]
+		arr.unshift({name : '홍길동'}); // [{name : '홍길동'}, '2', 1, true] 
+		console.log(arr);
+		console.log(arr.shift());
+		console.log(arr.pop());
+		console.log(arr);//['2', 1]
+	</script>
+</body>
+</html>

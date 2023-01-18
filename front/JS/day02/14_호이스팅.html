@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<Script>
+		/*
+		호이스팅 : js가 실행전, var로 된 변수나 함수들을 위로 끌어 올리는 작업
+		*/
+		x = 10;
+		var x;
+		console.log(x); //정상작동
+
+		//아래 코드는 호이스팅이 일어나지 않아 그대로 실행되서 에러발생
+		y = 20;
+		let y; //let은 호이스팅이 일어나지 않음
+		console.log(y); 
+
+		test1(); //var과 마찬가지로 호이스팅 발생
+		function test1(){ console.log('hi')} //함수선언식
+
+		/*
+		var test2; 이렇게 호이스팅이 발생해서 에러가 남
+		test2();
+		test2 = function(){
+			console.log('hello');
+		}
+		*/
+		var test2 = function(){ //함수표현식
+			console.log('hello');
+		}
+	</Script>
+</body>
+</html>
