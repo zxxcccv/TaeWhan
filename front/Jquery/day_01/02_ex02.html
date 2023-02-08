@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="../js/jquery.min.js"></script>
+	<style>
+		.box{
+			height: 100px; border: 1px solid black;text-align: center;
+			line-height: 100px; font-size: 30px; display: none;
+		}
+	</style>
+</head>
+<body>
+	<!--
+		버튼을 생성하고, 버튼을 클릭했을 때, 빈 박스에 hello라는 글자가
+		출력되도록 코드를 작성하세요.
+		html 코드를 이용하여 버튼을 생성할 수 있는가?
+		jquery를 이용하여 이벤트를 등록할 수 있는가?
+		jquery를 이용하여 요소 안에 글자를 설정할 수 있는가?
+		jquery를
+	-->
+	<button type="button" class="btn">hello</button>
+	<br>
+	<br>
+	<div class="box"></div>
+	<script>
+		$('.btn').click(function(){
+			let text = $(this).text();
+			$('.box').text(text);
+			$('.box').show();
+				
+			})
+	</script>
+</body>
+</html>

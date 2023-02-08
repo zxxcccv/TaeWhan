@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="../js/jquery.min.js"></script>
+	<style>
+		*{padding: 0; margin: 0;}
+		a{text-decoration: none;}
+		ul{list-style: none;}
+		.container{
+			height: 50px; margin-top: 30px; border: 3px solid black;
+			overflow: hidden; width: 150px;
+		}
+		.item-news{
+			height: 50px; line-height: 50px; padding-left: 20px;
+			background-color: yellow; float: left; 
+		}
+		.item-news:nth-child(2n){
+			background-color: aqua;
+		}
+		.btn-box{
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="container">
+		<a href="#" class="btn-prev">&lt;</a>
+		<a href="#" class="btn-next">&gt;</a>
+		<ul class="list-news">
+			<li class="item-news">
+				<a href="#" class="link-news">안녕하세요1</a>
+			</li>
+			<li class="item-news">
+				<a href="#" class="link-news">안녕하세요2</a>
+			</li>
+			<li class="item-news">
+				<a href="#" class="link-news">안녕하세요3</a>
+			</li>
+			<li class="item-news">
+				<a href="#" class="link-news">안녕하세요4</a>
+			</li>
+			<li class="item-news">
+				<a href="#" class="link-news">안녕하세요5</a>
+			</li>
+			<li class="item-news">
+				<a href="#" class="link-news">안녕하세요6</a>
+			</li>
+		</ul>
+	</div>
+	<script>
+		/*
+		hover 이벤트를 등록
+		 - 마우스가 요소 안으로 들어오면
+		 - 애니메이션이 진행중인 setInterval를 해제 => clearInterval
+
+		 - 마우스가 요소를 빠져나가면 
+		 - setInterval를 통해 애니메이션이 진행되도록 작업
+		*/
+		$('.btn-next').click(function(){
+			if(!$('item-news').first().is(':animated')){
+			$('.item-news').first().animate({marginTop : '-=50px'},900,function(){
+				$(this).detach().appendTo('.list-news').removeAttr('style');
+			});
+			}
+		})
+		
+
+		/*var a = setInterval(function a(){
+			if(!$('item-news').first().is(':animated')){
+			$('.item-news').first().animate({marginTop : '-=50px'},900,function(){
+				$(this).detach().appendTo('.list-news').removeAttr('style');
+			});
+		}
+		},1000);*/
+	</script>
+	
+</body>
+</html>
+
+<script>
+	setInterval(rolling, 2000);
+$('.btn-next').click(function(){
+	moveRight();
+});
+$('.btn-prev').click(function(){
+	moveLeft();
+});
+
+function rolling(){
+		if(!$('.item-stock').first().is(':animated')){
+			let width = $('.item-stock').innerWidth();
+			$('.item-stock').first().animate({
+				marginLeft : `-${width}px`
+			},1200, function(){
+				$(this).detach().appendTo('.list-stock').removeAttr('style');
+			});
+		}
+	}
+
+function moveRight(){
+	let width = $('.item-stock').first().innerWidth();
+	if(!$('.item-stock').first().is(':animated')){
+		$('.item-stock').first().animate({
+			marginLeft : `-${width}px`
+		},1000, function(){
+			$(this).detach().appendTo('.list-stock').removeAttr('style');
+		});
+	}
+}
+function moveLeft(){
+	let width = $('.item-stock').first().innerWidth();
+	if(!$('.item-stock').first().is(':animated')){
+		$('.item-stock').last().detach().prependTo('.list-stock')
+			.css('marginLeft',`-${width}px`).animate({
+				marginLeft : 0}, 1000);
+	}
+}
+
+
+let a = setInterval(rollingUp,2000);
+
+$('.list-issue').hover(function(){
+	clearInterval(a);
+ }, function(){
+	 a =setInterval(rollingUp,2000);
+});
+
+function rollingUp(){
+	let height = $('.item-issue').first().height();
+	if(!$('.item-issue').first().is(':animated')){
+		$('.item-issue').first().animate({
+			marginTop : `-${height}px`
+		},1000, function(){
+			$(this).detach().appendTo('.list-issue').removeAttr('style');
+		});
+	}
+
+};
+</script>

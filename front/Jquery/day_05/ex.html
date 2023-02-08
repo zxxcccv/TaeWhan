@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="../js/jquery.min.js"></script>
+	<style>
+		.container{
+			height: 800px; border: 1px solid black; position: relative;
+		}
+		#box{
+			height: 100px;width: 100px; border: 1px solid black;
+			float: left; margin: 50px 50px 0 400px ; text-align: center;
+			line-height: 100px;
+		}
+		#box::after{
+			content: ''; display: block; clear: both;
+		}
+		.open{
+			width: 1600px; height: 700px; border: 1px solid black;
+			position: absolute; top: 40px; right: 10px; left: 130px; 
+			bottom: 10px; display: none; line-height: 700px; text-align: center;
+		}
+		.btn{
+			float: right;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="open openbox1">안녕하세요.
+			<button type="button" class="btn btn1">X</button>
+		</div>
+		<div class="open openbox2">반갑습니다.
+			<button type="button" class="btn btn2">X</button>
+		</div>
+		<div class="open openbox3">또만나요.
+			<button type="button" class="btn btn3">X</button>
+		</div>
+		<button class="box1 tt" id="box">1</button>
+		<button class="box2 tt" id="box">2</button>
+		<button class="box3 tt" id="box">3</button>
+	</div>
+
+	<script>
+		$('.box1').click(function(){
+			$('.openbox1').css('display','block');
+			$('.container').css('background-color','rgba(0,0,0,0.1)');
+			$('.tt').css('display','none');
+		});
+		$('.btn1').click(function(){
+			$('.openbox1').css('display','none');
+			$('.container').css('background-color','rgba(0,0,0,0)');
+			$('.tt').css('display','inline');
+		})
+		$('.box2').click(function(){
+			$('.openbox2').css('display','block');
+			$('.container').css('background-color','rgba(0,0,0,0.1)');
+			$('.tt').css('display','none');
+		});
+		$('.btn2').click(function(){
+			$('.openbox2').css('display','none');
+			$('.container').css('background-color','rgba(0,0,0,0)');
+			$('.tt').css('display','inline');
+		})
+		$('.box3').click(function(){
+			$('.openbox3').css('display','block');
+			$('.container').css('background-color','rgba(0,0,0,0.1)');
+			$('.tt').css('display','none');
+		});
+		$('.btn3').click(function(){
+			$('.openbox3').css('display','none');
+			$('.container').css('background-color','rgba(0,0,0,0)');
+			$('.tt').css('display','inline');
+		})
+		
+
+	</script>
+</body>
+</html>

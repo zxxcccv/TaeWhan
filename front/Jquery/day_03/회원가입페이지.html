@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="../js/jquery.min.js"></script>
+	<style>
+		*{
+			padding: 10px; margin: 20px;
+		}
+		.aa{
+		 display: block;
+		}
+		#form{
+			border: 1px solid black; width: 400px;
+		}
+		.btn{
+			margin-left: 150px;
+		}
+		.inp{
+			width: 300px;
+		}
+		
+	</style>
+</head>
+<body>
+	<form id="form" method="get">
+		<h1>회원가입</h1>
+		<label class="aa">ID
+			<input class= "inp" type="text" name="id" id="id">
+		</label>
+		<label class="aa">PW
+			<input class= "inp" type="text" name="pw" id="pw">
+		</label>
+		<label class="aa">PW확인
+			<input class= "inp" type="text" name="pw1" id="pw1">
+		</label>
+		<div>
+			<label for=""><input type="checkbox" class="gender">남성</label>
+			<label for=""><input type="checkbox" class="gender">여성</label>
+			
+		</div>	
+
+		<button class="btn">회원가입</button>
+	</form>
+
+	<script>
+		/*
+		아이디는 5~13자, 영문, 숫자만 가능
+		비번은 8~20자, 영문, 숫자, !@#%$만 가능
+		*/
+		$('#form').submit(function(){
+			let id = $('[name=id]').val();
+			if($('[name=id]').val().length < 5){
+				alert('아이디는 5자 이상입니다.');
+				$('[name=id]').focus();
+				return false;
+			}
+			let idRegex = /^[a-zA-Z0-9]{5,13}$/;
+			if(!idRegex.test(id)){
+				alert('아이디는 5~13자, 영문, 숫자만 가능합니다.')
+				$('[name=id]').focus();
+				return false;
+			}
+			let pw = $('[name=pw]').val()
+			let pwRegex = /^[a-zA-Z0-9!@#$%]{8,20}$/;
+			if($('[name=pw]').val().length < 1){
+				alert('비밀번호를 입력해주세요.');
+				$('[name=pw]').focus();
+				return false;
+			}
+			if(!idRegex.test(pw)){
+				alert('비번은 8~20자, 영문, 숫자, !@#%$만 가능합니다.')
+				$('[name=pw]').focus();
+				return false;
+			}
+			let pw1 = $('[name=pw1]').val()
+			if(pw!=pw1){
+				alert('비밀번호가 다릅니다.');
+				return false;
+			}
+			if(!$('.gender').is(':checked')){
+			alert('성별을 체크해주세요.');
+			return false;
+			}
+		});
+		
+	</script>
+</body>
+</html>
